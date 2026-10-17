@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* Mobile touch enhancements */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  overscroll-behavior-y: none;
+}
+
+/* Safe area padding utilities for iOS notches and home indicator */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 16px);
+}
+
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  header, nav, button, .print\:hidden {
+    display: none !important;
+  }
+  .printable-certificate {
+    border-width: 6px !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    margin: 0 !important;
+    padding: 24px !important;
+  }
+}
+
